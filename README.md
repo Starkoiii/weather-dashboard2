@@ -5,8 +5,11 @@ I created a weather dashboard site to combat not knowing what the weather is goi
 https://github.com/Starkoiii/weather-dashboard2
 
 ## Link to deployed site
+https://starkoiii.github.io/weather-dashboard2/
 
-![Alt text](../screencapture-file-Users-tuncho-Desktop-new-folder3-index-html-2023-07-16-15_39_49.png)
+## Screenshot
+
+![Alt text](/assets/images/screencapture-file-Users-tuncho-bootcamp-weather-dashboard2-index-html-2023-07-16-16_39_44.png)
 
 ## Accesibility/Grading requirements
 

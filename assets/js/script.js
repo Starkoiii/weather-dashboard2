@@ -13,7 +13,7 @@ $(document).ready(function () {
         }).then(function (response) {
             return response.json();
         }).then(function (data) {
-            //puts the found geolocation into the weather apis 
+            //puts the location into the weather apis 
             var weatherURL = 'https://api.openweathermap.org/data/2.5/forecast?lat=' + data[0].lat + '&lon=' + data[0].lon + '&units=imperial&appid=' + key;
             var currentWeather = 'https://api.openweathermap.org/data/2.5/weather?lat=' + data[0].lat + '&lon=' + data[0].lon + '&units=imperial&appid=' + key;
             fetch(weatherURL).then(function (response) {
@@ -52,7 +52,7 @@ $(document).ready(function () {
         };
     };
     showHistory();
-    //when the button is clicked, we want to save the input, erase the text box, and store it in local storage if it follows our rules.
+    //when the button is clicked,iy saves the input, erases the text box, and stores it in local storage
     $('button').on('click', function (event) {
         event.preventDefault();
         var input = $('#username').val().replaceAll(" ", "")
@@ -69,7 +69,7 @@ $(document).ready(function () {
         $('#history').val('');
         fetchData(input);
     });
-    // be able to click a city in the history to go back to the city you've already searched
+    // click a city in the history to go back to the city you've already searched
     $('h2').on('click', function () {
         var choice = $(this).text()
         fetchData(choice)
