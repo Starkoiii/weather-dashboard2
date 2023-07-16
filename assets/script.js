@@ -1,10 +1,10 @@
 // variable assignments
 $(document).ready(function () {
     var key = '0a7ab6c913ff7fe0bef1db0b83580364'
-    var localStorageCurrent = localStorage.getItem('pastCities');
-    var localCities = [];
-    var localParsed = JSON.parse(localStorage.getItem('pastCities'));
-    var currentDay = document.querySelector(".current");
+    var localStorageCurrent = localStorage.getItem('pastCitys');
+    var localCity = [];
+    var localP = JSON.parse(localStorage.getItem('pastCitys'));
+    var currentD = document.querySelector(".current");
     // this function gets the data you searched
     function fetchData(choice) {
         var url = "https://api.openweathermap.org/geo/1.0/direct?q=" + choice + "&limit=1&appid=" + key;
@@ -31,7 +31,7 @@ $(document).ready(function () {
                 return response.json();
             }).then(function (data) {
                 console.log(data)
-                $(currentDay).each(function (i) {
+                $(currentD).each(function (i) {
                     $(this).find('.date').text(data.name + ' (' + dayjs().format('MM/DD/YYYY') +  ')');
                     $(this).find('.condition').attr('src', '#');
                     $(this).find('.temp').text('Temperature: ' + data.main.temp + ', Feels like: ' + data.main.feels_like);
@@ -44,7 +44,7 @@ $(document).ready(function () {
     //created a h2 to display the history data on the site
     function showHistory() {
         if (localStorageCurrent) {
-            localParsed.forEach(function (i) {
+            localP.forEach(function (i) {
                 var h2 = document.createElement('h2');
                 h2.innerText = i;
                 $('#history').append(h2);
@@ -58,12 +58,12 @@ $(document).ready(function () {
         var input = $('#username').val().replaceAll(" ", "")
         $('#username').val('');
         if (input) {
-            if (localStorageCurrent && !localParsed.includes(input)) {
-                localParsed.push(input)
-                localStorage.setItem('pastCities', JSON.stringify(localParsed))
-            } else if (!localCities.includes(input)) {
-                localCities.push(input)
-                localStorage.setItem('pastCities', JSON.stringify(localCities))
+            if (localStorageCurrent && !localP.includes(input)) {
+                localP.push(input)
+                localStorage.setItem('pastCities', JSON.stringify(localP))
+            } else if (!localCity.includes(input)) {
+                localCity.push(input)
+                localStorage.setItem('pastCities', JSON.stringify(localCity))
             };
         };
         $('#history').val('');

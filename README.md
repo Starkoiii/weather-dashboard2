@@ -1,5 +1,5 @@
 # weather-dashboard
-
+I created a weather dashboard site to combat not knowing what the weather is going to be like before you visit a location, its features involve the temperature, wind, humidity and a 5 day forecast for the future days to come.
 
 ## Link to the repo
 https://github.com/Starkoiii/weather-dashboard2
